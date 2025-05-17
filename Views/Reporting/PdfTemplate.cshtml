@@ -1,0 +1,29 @@
+﻿@model List<Reporting.Models.Person>
+@{
+    Layout = null;
+}
+
+<h2>PDF Report</h2>
+<table border="1" cellpadding="5" cellspacing="0" style="border-collapse: collapse; width: 100%;">
+    <thead>
+        <tr style="background-color: #4CAF50; color: white;">
+            <th>Name</th>
+            <th>Age</th>
+            <th>BirthDay</th>
+            <th>Job</th>
+            <th>Education</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var person in Model)
+        {
+            <tr>
+                <td>@person.Name</td>
+                <td>@person.Age</td>
+                <td>@person.BirthDay.ToString("dd MMM yyyy")</td>
+                <td>@person.Job</td>
+                <td>@person.Education</td>
+            </tr>
+        }
+    </tbody>
+</table>
